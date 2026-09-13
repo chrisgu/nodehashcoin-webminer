@@ -1,0 +1,19 @@
+{
+  "name": "nodehashcoin-webminer",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "NodeHashCoin browser miner — BLAKE3 in a Web Worker, Start/Stop, CPU presets",
+  "scripts": {
+    "build": "esbuild src/browser.ts --bundle --outfile=dist/miner.js --format=esm --platform=browser && esbuild src/miner-worker.ts --bundle --outfile=dist/miner-worker.js --format=esm --platform=browser && node src/copy-html.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@noble/hashes": "^2.0.1",
+    "nodehashcoin-node": "github:chrisgu/nodehashcoin-node"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.9",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NodeHashCoin miner</title>
+  <link rel="stylesheet" href="./miner.css">
+</head>
+<body>
+  <main class="wrap">
+    <p class="eyebrow">NodeHashCoin · BLAKE3</p>
+    <h1>Mine NHC in the browser</h1>
+    <p class="lede">Explicit Start / Stop. Hashing stays on this device — the site is only a gateway. No Chrome Web Store extension.</p>
+    <label>Payout address
+      <input id="payout" spellcheck="false" placeholder="nhc1…" autocomplete="off">
+    </label>
+    <label>CPU preset
+      <select id="preset">
+        <option value="desktop">Desktop · ~75% CPU</option>
+        <option value="laptop" selected>Laptop · ~40% CPU</option>
+        <option value="phone">Phone · ~15% CPU</option>
+      </select>
+    </label>
+    <p class="cta">
+      <button type="button" id="start">Start mining</button>
+      <button type="button" id="stop" disabled>Stop</button>
+    </p>
+    <p id="rate" class="rate">0.00 MH/s</p>
+    <p id="status" class="status">Idle.</p>
+  </main>
+  <script type="module" src="./miner.js"></script>
+</body>
+</html>
